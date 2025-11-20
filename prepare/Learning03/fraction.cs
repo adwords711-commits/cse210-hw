@@ -14,21 +14,36 @@ public class Fraction
     public Fraction(int top)
     {
         _bottom = 1;
+        _top = top;
     } 
     public Fraction(int top, int bottom)
     {
         _top = top;
         _bottom = bottom;
     }
-    public int Top
+    public int GetTop()
     {
-        get{return _top; }
-        set{_top = value; }
+        return _top;
     }
-    public int bottom
+    public void SetTop(int top)
     {
-        get{return _bottom; }
-        set{_bottom = value; }
+        _top = top;
+    }
+    public int GetBottom()
+    {
+        return _bottom;
+    }
+    public void SetBottom(int bottom)
+    {
+        _bottom = bottom;
+    }
+    public string GetFractionString()
+    {
+        return _top + "/" + _bottom;
+    }
+    public double GetDecimalValue()
+    {
+        return (double)_top/_bottom;
     }
 }
 
