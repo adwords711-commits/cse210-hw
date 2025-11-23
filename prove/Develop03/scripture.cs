@@ -26,6 +26,7 @@ public class Scripture
         int index = r.Next(0, _words.Count);
         Word selectWord = _words[index];
         selectWord.Hide();
+        
         }
     }
     public string GetText()
