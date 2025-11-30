@@ -9,8 +9,9 @@ public class BreathingActivity : Activity
     private void HandleBreathing()
     {
         Console.WriteLine("Get Ready...");
-            PauseWithSpinner();
-
+        PauseWithSpinner();
+        Console.WriteLine();
+        
         DateTime startTime = DateTime.Now;
         DateTime endTime = startTime.AddSeconds(GetDuration());
 

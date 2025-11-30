@@ -1,13 +1,31 @@
 using System;
+using System.Runtime.InteropServices;
+using System.Security.Cryptography.X509Certificates;
 
 class Program
 {
     static void Main(string[] args)
     {
-        //ReflectingActivity reflecting = new ReflectingActivity(
-        //    "Reflecting", "This activity will help you reflect on your life", 10);
-        //reflecting.Run();
-        BreathingActivity breathing = new BreathingActivity("Welcome to the Breathing Activity", "This activity will help you relax by walking you through breathing in and out slowly. Clear your mind, and focus in your breathing.", 25);
-        breathing.Run();
+        Program program = new Program();
+        program.ShowMenu();
+        int choice = program.GetUserChoice();
+        Console.WriteLine("You chose: " + choice);
     }
+    public void ShowMenu()
+    {
+        Console.WriteLine("Choose an activity:");
+        Console.WriteLine("1. Breathing Activity");
+        Console.WriteLine("2. Reflecting Activity");
+        Console.WriteLine("3. Listing Activity");
+        Console.WriteLine("4. Quit");
+    }
+
+    public int GetUserChoice()
+    {
+        Console.Write("Enter your choice (1-4): ");
+        string input = Console.ReadLine();
+        int choice = int.Parse(input);
+        return choice;
+    }
+        
 }
