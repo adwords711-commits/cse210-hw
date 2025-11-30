@@ -13,6 +13,10 @@ public class Activity
         _description = description;
         _duration = duration;
     }
+    public int GetDuration()
+    {
+        return _duration;
+    }
     
     public void DisplayStartMessage ()
     {
@@ -21,7 +25,7 @@ public class Activity
     }
     public void DisplayEndMessage()
     {
-        Console.WriteLine($"Well done! You have completed another {_duration} seconds of the {_name} Activity.");
+        Console.WriteLine($"You have completed another {_duration} seconds of the {_name} Activity.");
         Thread.Sleep(3000);
     }
     public void PauseWithSpinner()
@@ -37,7 +41,7 @@ public class Activity
         animationStrings.Add("\\");
 
         DateTime startTime = DateTime.Now;
-        DateTime endTime = startTime.AddSeconds(10); // adjust duration if needed
+        DateTime endTime = startTime.AddSeconds(5); // adjust duration if needed
         int i = 0;
         while (DateTime.Now < endTime)
         {
@@ -57,11 +61,10 @@ public class Activity
     {
         for (int i = 5; i > 0; i--)
         {
-            Console.Write("i");
+            Console.Write(i);
             Thread.Sleep(1000);
             Console.Write("\b \b");
         }
-        Console.WriteLine("Done.");
     }
     public void Run()
     {

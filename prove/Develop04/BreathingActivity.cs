@@ -8,11 +8,32 @@ public class BreathingActivity : Activity
     }
     private void HandleBreathing()
     {
-    
+        Console.WriteLine("Get Ready...");
+            PauseWithSpinner();
+
+        DateTime startTime = DateTime.Now;
+        DateTime endTime = startTime.AddSeconds(GetDuration());
+
+        while (DateTime.Now < endTime)
+        {
+            Console.Write("Breathe in...");
+            PauseWithCountdown();
+            Console.WriteLine();
+
+            Console.Write("Breathe out...");
+            PauseWithCountdown();
+            Console.WriteLine();
+
+            Console.WriteLine();
+        }
+        Console.WriteLine("Well Done!");
+        PauseWithSpinner();
     }
     public void Run()
     {
-        
+        DisplayStartMessage();
+        HandleBreathing();
+        DisplayEndMessage();
     }
         
 }
