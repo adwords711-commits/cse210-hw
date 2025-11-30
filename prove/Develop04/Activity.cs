@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
 public class Activity
@@ -15,22 +16,57 @@ public class Activity
     
     public void DisplayStartMessage ()
     {
-        
+        Console.WriteLine($"Activity: {_name}\nDescription: {_description}\nDuration: {_duration} seconds");
+        Thread.Sleep(3000);
     }
     public void DisplayEndMessage()
     {
-        
+        Console.WriteLine($"Well done! You have completed another {_duration} seconds of the {_name} Activity.");
+        Thread.Sleep(3000);
     }
     public void PauseWithSpinner()
     {
-        
+        List<string> animationStrings = new List<string>();
+        animationStrings.Add("|");
+        animationStrings.Add("/");
+        animationStrings.Add("-");
+        animationStrings.Add("\\");
+        animationStrings.Add("|");
+        animationStrings.Add("/");
+        animationStrings.Add("-");
+        animationStrings.Add("\\");
+
+        DateTime startTime = DateTime.Now;
+        DateTime endTime = startTime.AddSeconds(10); // adjust duration if needed
+        int i = 0;
+        while (DateTime.Now < endTime)
+        {
+            string s = animationStrings[i];
+            Console.Write(s);
+            Thread.Sleep(250);
+            Console.Write("\b \b");
+            i++;
+
+            if (i >= animationStrings.Count)
+            {
+                i = 0;
+            }
+        }    
     }
     public void PauseWithCountdown()
     {
-        
+        for (int i = 5; i > 0; i--)
+        {
+            Console.Write("i");
+            Thread.Sleep(1000);
+            Console.Write("\b \b");
+        }
+        Console.WriteLine("Done.");
     }
     public void Run()
     {
-        
+        DisplayStartMessage();
+        PauseWithCountdown();
+        DisplayEndMessage();    
     }
 }

@@ -6,13 +6,13 @@ public class BreathingActivity : Activity
     {
         
     }
-    public void Run()
-    {
-        
-    }
     private void HandleBreathing()
     {
     
+    }
+    public void Run()
+    {
+        
     }
         
 }

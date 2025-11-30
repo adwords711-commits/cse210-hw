@@ -4,6 +4,8 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Develop04 World!");
+        ReflectingActivity reflecting = new ReflectingActivity(
+            "Reflecting", "This activity will help you reflect on your life", 10);
+        reflecting.Run();
     }
 }
