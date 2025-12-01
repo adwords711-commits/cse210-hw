@@ -34,7 +34,7 @@ public class ListingActivity : Activity
         Console.WriteLine($"You listed {_items.Count} items ");
     }
     public void Run()
-    {
+    {   
         DisplayStartMessage();
         string prompt = GetRandomPrompt();
         DisplayPrompt(prompt);

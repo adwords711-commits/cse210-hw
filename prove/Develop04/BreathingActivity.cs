@@ -7,11 +7,7 @@ public class BreathingActivity : Activity
         
     }
     private void HandleBreathing()
-    {
-        Console.WriteLine("Get Ready...");
-        PauseWithSpinner();
-        Console.WriteLine();
-        
+    {   
         DateTime startTime = DateTime.Now;
         DateTime endTime = startTime.AddSeconds(GetDuration());
 
@@ -32,7 +28,6 @@ public class BreathingActivity : Activity
     }
     public void Run()
     {
-        DisplayStartMessage();
         HandleBreathing();
         DisplayEndMessage();
     }

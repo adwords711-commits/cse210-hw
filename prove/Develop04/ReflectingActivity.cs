@@ -7,6 +7,7 @@ public class ReflectingActivity : Activity
     public ReflectingActivity(string name, string description, int duration)
         : base(name, description, duration)
     {
+
         _prompts = new List<string>();
         _questions = new List<string>();
 
@@ -47,7 +48,6 @@ public class ReflectingActivity : Activity
     }
     public void Run()
     {
-        DisplayStartMessage();
         string prompt = GetRandomPrompt();
         DisplayPrompt(prompt);
         // to loop through a few questions

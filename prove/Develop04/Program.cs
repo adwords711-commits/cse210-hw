@@ -9,7 +9,6 @@ class Program
         Program program = new Program();
         program.ShowMenu();
         int choice = program.GetUserChoice();
-        Console.WriteLine("You chose: " + choice);
         program.StartActivity(choice);
     }
     public void ShowMenu()
@@ -18,7 +17,7 @@ class Program
         Console.WriteLine("2. Reflecting Activity");
         Console.WriteLine("3. Listing Activity");
         Console.WriteLine("4. Quit");
-        Console.WriteLine("Select a choice from the menu: ");
+        Console.Write("Select a choice from the menu: ");
     }
 
     public int GetUserChoice()
@@ -31,26 +30,41 @@ class Program
     {
         if (choice == 1)
         {
+            BreathingActivity activity = new BreathingActivity("Welcome to the Breathing Activity", "This activity will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing.", 0 );
+            activity.DisplayStartMessage();
+            Console.WriteLine();
             Console.Write("How long, in seconds would you like for your session? ");
             int duration = int.Parse(Console.ReadLine());
-
-            BreathingActivity activity = new BreathingActivity("Welcome to the Breathing Activity", "This activity will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing. ", duration );
+            activity.SetDuration(duration);
+            Console.WriteLine("Get Ready...");
+            activity.PauseWithSpinner();
             activity.Run();
         }
         else if (choice == 2)
         {
+
+            ReflectingActivity activity2 = new ReflectingActivity("Welcome to the Reflecting Activity", "This activity will help you reflect on times in your life when you have shown strength and resilence. This will help you recognize the power you have and how you can use it in other aspects of your life.", 0 );
+            activity2.DisplayStartMessage();
             Console.Write("How long, in seconds would you like for your session? ");
             int duration = int.Parse(Console.ReadLine());
+            activity2.SetDuration(duration);
 
-            ReflectingActivity activity2 = new ReflectingActivity("Welcome to the Breathing Activity", "This activity will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing. ", duration );
+            Console.WriteLine("Get Ready...");
+            activity2.PauseWithSpinner();
+            Console.WriteLine();
             activity2.Run();   
         }
         else if (choice == 3)
         {
+            ListingActivity activity3 = new ListingActivity("Welcome to the Listing Activity.", "THis activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.", 0 );
+            activity3.DisplayStartMessage();
+
             Console.Write("How long, in seconds would you like for your session? ");
             int duration = int.Parse(Console.ReadLine());
-
-            ListingActivity activity3 = new ListingActivity("Welcome to the Breathing Activity", "This activity will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing. ", duration );
+            activity3.SetDuration(duration);
+            Console.WriteLine("Get Ready...");
+            activity3.PauseWithSpinner();
+            Console.WriteLine();
             activity3.Run();
         }
     }

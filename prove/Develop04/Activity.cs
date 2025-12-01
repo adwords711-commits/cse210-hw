@@ -17,14 +17,22 @@ public class Activity
     {
         return _duration;
     }
+    public void SetDuration(int duration)
+    {
+        _duration = duration;
+    }
     
     public void DisplayStartMessage ()
     {
-        Console.WriteLine($"Activity: {_name}\n\nDescription: {_description}\nDuration: {_duration} seconds");
+        Console.WriteLine();
+        Console.WriteLine($"{_name}\n\n{_description}\n");
         Thread.Sleep(3000);
     }
     public void DisplayEndMessage()
     {
+        Console.WriteLine();
+        Console.WriteLine("well Done! ");
+        Console.WriteLine();
         Console.WriteLine($"You have completed another {_duration} seconds of the {_name} Activity.");
         Thread.Sleep(3000);
     }
@@ -68,7 +76,6 @@ public class Activity
     }
     public void Run()
     {
-        DisplayStartMessage();
         PauseWithCountdown();
         DisplayEndMessage();    
     }
