@@ -48,14 +48,38 @@ public class ReflectingActivity : Activity
     }
     public void Run()
     {
+        DisplayStartMessage();
+        Console.WriteLine();
+        
+        Console.Write("How long, in seconds would you like for your session? ");
+        int duration = int.Parse(Console.ReadLine());
+        SetDuration(duration);
+        Console.WriteLine();
+
+        Console.WriteLine("Get Ready...");
+        PauseWithSpinner();
+        Console.WriteLine();
+
         string prompt = GetRandomPrompt();
-        DisplayPrompt(prompt);
-        // to loop through a few questions
+        Console.WriteLine("Consider the following prompt: ");
+        Console.WriteLine($"--- {prompt} ---");
+        Console.WriteLine();
+
+        Console.WriteLine("When you have something in mind, press Enter to continue. ");
+        Console.ReadLine();
+        Console.WriteLine();
+
+        Console.WriteLine("Now ponder on each of the following questions as they relate to this experience.\nYou may beging in: ");
+        PauseWithCountdown();
+        Console.WriteLine();
+        
         for (int i = 0; i < 3; i++)
         {   
-            String question = GetRandomQuestion();
-            DisplayQuestion(question);
-            PauseWithSpinner();
+            string question = GetRandomQuestion();
+            Console.Write(question);
+            PauseWithSpinner(15);
+            Console.WriteLine();
+
         }
         DisplayEndMessage();
     }

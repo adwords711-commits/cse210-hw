@@ -8,6 +8,7 @@ public class BreathingActivity : Activity
     }
     private void HandleBreathing()
     {   
+        Console.WriteLine();
         DateTime startTime = DateTime.Now;
         DateTime endTime = startTime.AddSeconds(GetDuration());
 
@@ -16,18 +17,26 @@ public class BreathingActivity : Activity
             Console.Write("Breathe in...");
             PauseWithCountdown();
             Console.WriteLine();
-
+        
             Console.Write("Breathe out...");
             PauseWithCountdown();
             Console.WriteLine();
 
             Console.WriteLine();
         }
-        Console.WriteLine("Well Done!");
-        PauseWithSpinner();
     }
     public void Run()
     {
+        DisplayStartMessage();
+        
+        Console.Write("How long, in seconds would you like for your session? ");
+        int duration = int.Parse(Console.ReadLine());
+        SetDuration(duration);
+        Console.WriteLine();
+        Console.WriteLine("Get Ready...");
+        PauseWithSpinner();
+        Console.WriteLine();
+        
         HandleBreathing();
         DisplayEndMessage();
     }

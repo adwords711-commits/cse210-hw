@@ -36,6 +36,16 @@ public class ListingActivity : Activity
     public void Run()
     {   
         DisplayStartMessage();
+        
+        Console.Write("How long, in seconds would you like for your session? ");
+        int duration = int.Parse(Console.ReadLine());
+        SetDuration(duration);
+        
+        SetDuration(duration);
+        Console.WriteLine("Get Ready...");
+        PauseWithSpinner();
+        Console.WriteLine();
+        
         string prompt = GetRandomPrompt();
         DisplayPrompt(prompt);
         PauseWithCountdown();

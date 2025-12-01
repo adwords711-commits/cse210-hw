@@ -32,11 +32,12 @@ public class Activity
     {
         Console.WriteLine();
         Console.WriteLine("well Done! ");
+        PauseWithSpinner();
         Console.WriteLine();
         Console.WriteLine($"You have completed another {_duration} seconds of the {_name} Activity.");
-        Thread.Sleep(3000);
+        PauseWithSpinner();
     }
-    public void PauseWithSpinner()
+    public void PauseWithSpinner(int seconds = 5)
     {
         List<string> animationStrings = new List<string>();
         animationStrings.Add("|");
@@ -49,7 +50,7 @@ public class Activity
         animationStrings.Add("\\");
 
         DateTime startTime = DateTime.Now;
-        DateTime endTime = startTime.AddSeconds(5); // adjust duration if needed
+        DateTime endTime = startTime.AddSeconds(seconds); // this line allows me to add or reduce the seconds in the reflection acitivity questions
         int i = 0;
         while (DateTime.Now < endTime)
         {
