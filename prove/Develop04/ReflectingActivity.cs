@@ -69,16 +69,21 @@ public class ReflectingActivity : Activity
         Console.ReadLine();
         Console.WriteLine();
 
-        Console.WriteLine("Now ponder on each of the following questions as they relate to this experience.\nYou may beging in: ");
+        Console.Write("Now ponder on each of the following questions as they relate to this experience.\nYou may beging in: ");
         PauseWithCountdown();
         Console.WriteLine();
         
+        List<string> remainingQuestions = new List<string>(_questions);
+
         for (int i = 0; i < 3; i++)
         {   
-            string question = GetRandomQuestion();
-            Console.Write(question);
+            Random ran = new Random();
+            int index = ran.Next(remainingQuestions.Count); // this variable pic a ramdom question from remaining
+            string question = remainingQuestions[index];  // and then  gets the question
+            Console.Write(question); // display it
             PauseWithSpinner(15);
             Console.WriteLine();
+            remainingQuestions.RemoveAt(index); // Remove makes sure there is no duplicates to exeed the requirements.
 
         }
         DisplayEndMessage();
