@@ -20,7 +20,7 @@ public class Activity
     
     public void DisplayStartMessage ()
     {
-        Console.WriteLine($"Activity: {_name}\nDescription: {_description}\nDuration: {_duration} seconds");
+        Console.WriteLine($"Activity: {_name}\n\nDescription: {_description}\nDuration: {_duration} seconds");
         Thread.Sleep(3000);
     }
     public void DisplayEndMessage()
