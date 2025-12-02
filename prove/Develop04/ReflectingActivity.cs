@@ -81,9 +81,9 @@ public class ReflectingActivity : Activity
             int index = ran.Next(remainingQuestions.Count); // this variable pic a ramdom question from remaining
             string question = remainingQuestions[index];  // and then  gets the question
             Console.Write(question); // display it
-            PauseWithSpinner(15);
+            PauseWithSpinner(15); // allows custom seconds
             Console.WriteLine();
-            remainingQuestions.RemoveAt(index); // Remove makes sure there is no duplicates to exeed the requirements.
+            remainingQuestions.RemoveAt(index); // Remove makes sure there is no duplicates.
 
         }
         DisplayEndMessage();

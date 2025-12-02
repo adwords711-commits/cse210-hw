@@ -44,7 +44,10 @@ class Program
         {
 
             ReflectingActivity activity2 = new ReflectingActivity("Welcome to the Reflecting Activity", "This activity will help you reflect on times in your life when you have shown strength and resilence. This will help you recognize the power you have and how you can use it in other aspects of your life.", 0 );
-            activity2.Run();   
+            activity2.Run();
+            // edits to exeed the requirement by customizing the PauseWithSpinner to allow specifying the number of seconds to ponder questions
+            // in the Reflecting accitivity.
+            // also ensured that the ramdon prompt in the run() method of the design acctivity does not repeat same prompts
         }
         else if (choice == 3)
         {
