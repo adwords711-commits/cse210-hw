@@ -1,14 +1,18 @@
-public class Goal
+using System;
+public abstract class Goal
 {
-    private string _name;
-    private string _atribute
-    private int _points;
+    protected string _name;
+    protected string _description;
+    protected int _points;
 
     public Goal(string name, string description, int points)
     {
-        
+        _name = name;
+        _description = description;
+        _points = points;    
     }
-    public int RecordEvent()
-    public bool IsComplete()
-    public void DisplayGoal()
+    public abstract int RecordEvent();
+    public abstract bool IsComplete();
+    public abstract void DisplayGoal();
+    public abstract string GetStringRepresentation();
 }
