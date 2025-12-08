@@ -1,8 +1,6 @@
 using System;
 using System.IO;
 using System.Collections.Generic;
-using System.Security.Cryptography.X509Certificates;
-using System.Xml.Serialization;
 public class GoalManager
 {
     private List<Goal> _goals;
@@ -105,6 +103,23 @@ public class GoalManager
             _totalScore += pointsEarned;
 
             Console.WriteLine($"Congratulations! You have earned {pointsEarned} points!");
+        
+            //** Showing Creativity **
+            if (pointsEarned > 0)
+            {         
+                string[] motivationalMessage = 
+                {
+                    "*** Great job! *** You are doing an amazing work.",
+                    "*** Well done! *** With baby steps, great things can be accomplish.",
+                    "*** Fantastic! *** Every goal completed is a step closer to success!",
+                    "*** Awesome *** You are doing an amazing job!",
+                    "*** You are a star!*** keep moving forward.",
+                    "*** Excellent! *** Life is much better when we see the results of your hard work."
+                };
+            Random random = new Random();
+            int index = random.Next(motivationalMessage.Length);
+            Console.WriteLine(motivationalMessage[index]);
+            }
         }
     public int TotalScore
     {

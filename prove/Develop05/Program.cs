@@ -1,10 +1,14 @@
 using System;
+//*** Showing Creativity ***
+// To make the program engaging and fun, I added a motivational message everytime the user
+// completes a goal. The messages are randomly selected from an array. The creativty code with a ramdom selection feature
+// is implemented in the GoalManager class inside the RecordGoalEnent() method.
 
 GoalManager manager = new GoalManager();
 int choice = 0;
 while (choice != 6)
 {
-    Console.WriteLine($"You have {manager.TotalScore} points. ");
+    Console.WriteLine($"You have {manager.TotalScore} points.");
     Console.WriteLine();
     Console.WriteLine("Menu options: ");
     Console.WriteLine("1. Create New Goal");
@@ -13,7 +17,7 @@ while (choice != 6)
     Console.WriteLine("4. Load Goals");
     Console.WriteLine("5. Record Event");
     Console.WriteLine("6. Quit");
-    Console.Write("Select a choice from the menu: ");
+    Console.Write("Select a choice from the menu:");
 
     choice = int.Parse(Console.ReadLine());
 
