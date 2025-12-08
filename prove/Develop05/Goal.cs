@@ -11,6 +11,10 @@ public abstract class Goal
         _description = description;
         _points = points;    
     }
+    public string Name
+    {
+        get { return _name; }
+    }
     public abstract int RecordEvent();
     public abstract bool IsComplete();
     public abstract void DisplayGoal();

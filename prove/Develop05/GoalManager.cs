@@ -1,6 +1,8 @@
 using System;
 using System.IO;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
+using System.Xml.Serialization;
 public class GoalManager
 {
     private List<Goal> _goals;
@@ -30,7 +32,7 @@ public class GoalManager
     
     public void SaveGoals()
     {
-        Console.Write("Enter filename to save: ");
+        Console.Write("What is the filename for the goal file? ");
         string fileName = Console.ReadLine();
         using (StreamWriter outputFile = new StreamWriter(fileName))
         {
@@ -86,6 +88,28 @@ public class GoalManager
             }    
     }
         Console.WriteLine("Goals loaded successfully! ");
+    }
+    public void RecordGoalEvent()
+        {
+            Console.WriteLine("The goals are:");
+            for (int i = 0; i < _goals.Count; i++)
+            {
+                Console.WriteLine($"{i + 1}. {_goals[i].Name}");
+            }
+            Console.Write("Which goal did you accomplish? ");
+            int choice = int.Parse(Console.ReadLine());
+
+            int goalIndex = choice -1;
+
+            int pointsEarned = _goals[goalIndex].RecordEvent();
+            _totalScore += pointsEarned;
+
+            Console.WriteLine($"Congratulations! You have earned {pointsEarned} points!");
+        }
+    public int TotalScore
+    {
+        get { return _totalScore; }
+    }
 }    
                 
-}
+

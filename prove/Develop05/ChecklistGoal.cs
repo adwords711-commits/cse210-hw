@@ -44,7 +44,7 @@ public class ChecklistGoal : Goal
         {
             status = "[ ]";
         }
-        Console.WriteLine($"{status} {_name} ({_description} completed)");
+        Console.WriteLine($"{status} {_name} ({_description} -- Currenlty completed: {_timesCompleted}/{_completionTarget}");
     }
     public override string GetStringRepresentation()
     {

@@ -1,0 +1,4 @@
+0
+SimpleGoal|GIve a talk|to prepare for sacratment meeting when asked|100|False
+EternalGoal|Scriptures|To create a good study habbit|100
+ChecklistGoal|Temple|To participate in sacred ordinances|100|0|3|500
